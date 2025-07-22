@@ -187,7 +187,7 @@ label {
 }
 /* 勤怠区分チェック（右） */
 .right-checkboxes {
-  flex: 1 1 200px;
+  flex: 1 1 200;
   color: #2069a5;
   font-weight: bold;
 }
@@ -238,13 +238,13 @@ label {
   font-size: 25px;
 }
 
-/*ログイン画面のボタン集*/
-.login-display-button-row {
+/*ボタン2個の画面*/
+.display-button-row {
   text-align: center;
   margin-top: 20px;
 }
 
-.regist-return-button, .resist-confirm-button {
+.regist-return-button, .resist-confirm-button, .search-return-button{
   padding: 7px 30px;
   margin: 0 20px;
   font-size: 16px;
@@ -256,9 +256,7 @@ label {
   transition: background-color 0.3s ease;
 }
 
-
-
-.return-button, .login-button, .home-button, .search-button {
+.return-button, .login-button, .home-button, .search-button, .regist-button, .edit-button, .delete-button{
   padding: 7px 30px;
   margin: 0 70px;
   font-size: 16px;
@@ -270,10 +268,10 @@ label {
   transition: background-color 0.3s ease;
 }
 /* 戻るボタンの色 */
-.return-button, .regist-return-button{
+.return-button, .regist-return-button, .search-return-button{
   background-color: #aaa;
 }
-.return-button:hover, .regist-return-button:hover{
+.return-button:hover, .regist-return-button:hover, .search-return-button:hover{
   background-color: #888;
 }
 /*ホームへ戻るボタンの色*/
@@ -285,11 +283,37 @@ label {
 }
 
 /* ログイン＆検索ボタンの色 */
-.login-button, .search-button, .resist-confirm-button {
+.login-button, .search-button, .resist-confirm-button　{
   background-color: #428BCA;
 }
 .login-button:hover, .search-button:hover, .resist-confirm-button:hover {
   background-color: #3071a9;
+}
+/* 登録ボタンの色 */
+.regist-button {
+  background-color: #4259ca;
+}
+.regist-button:hover {
+  background-color: #4230a9;
+}
+/* 編集ボタンの色 */
+.edit-button {
+  background-color: #31b659;
+}
+.edit-button:hover {
+  background-color: #19973f;
+}
+/* 削除ボタンの色 */
+.delete-button {
+  background-color: #ca4242;
+}
+.delete-button:hover {
+  background-color: #a93030;
+}
+/*検索画面に戻るボタン*/
+.search-return-button{
+  display: block;
+  margin: auto;
 }
 
 .footer {
@@ -340,4 +364,23 @@ body {
 	text-align: left;
 }
 
+/*確認画面*/
+.time {
+  font-size: 17px;
+  text-align: center;
+  column-count: 2;
+  width: fit-content;
+}
 
+.check-message{
+  text-align: center;
+}
+.regist-check{
+  color:blue;
+}
+.edit-check{
+  color:green;
+}
+.delete-check{
+  color:red;
+}
