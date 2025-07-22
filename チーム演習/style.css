@@ -1,0 +1,195 @@
+body {
+  margin: 0;
+  font-family: 'Meiryo', sans-serif;
+  background-color: rgb(255, 255, 255);
+}
+/* ヘッダー部分全体 */
+.top-bar {
+  background-color:rgb(255, 255, 255);
+  display: flex; /* 子要素横並び */
+  align-items: center; /* 中央ぞろえ */
+  padding: 0;  /* ヘッダー内余白無し */
+}
+/* M COMPANY の背景だけ水色 */
+.logo-box {
+  background-color: #42ABE8;
+  color: white;
+  padding: 12px 20px;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 20px;
+  text-shadow: 2px 0px 0px rgb(39, 39, 39);
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+}
+.logo-m {
+  font-size: 35px; /* ← 通常より大きく */
+}
+/* Prokaryotes の見た目 */
+.title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Comic Sans MS', cursive;
+  font-weight: bold;
+  font-size: 35px;
+  color: black;
+}
+/* 右上のユーザー情報 */
+.user-info {
+  margin-left: auto;
+  padding-right: 20px;
+  font-size: 14px;
+  z-index: 1;
+}
+/* 検索画面タイトル */
+.top-title {
+  background-color: #42ABE8;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  text-shadow: 2px 2px 1px rgb(96, 96, 96);
+}
+
+/*↑ヘッダー部ここまでーーーーーーーーーーーーーXD*/
+
+/*目的（目的を選択してください）*/
+.purpose-title {
+  text-align: center;
+  padding: 10px;
+
+  font-size: 18px;
+}
+
+.purpose{
+  text-align: center;
+  padding: 10px;
+}
+
+/* 検索フォーム枠 */
+.search-box {
+  border: 4px solid #267EC5;
+  width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.form-row {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color:#2069a5;
+  font-weight: bold;
+}
+label {
+  display: inline-block;
+  width: 120px;
+}
+.text-input {
+  width: 230px;
+  padding: 5px;
+  border: 1.5px solid #2069A5;
+  border-radius: 5px 5px;
+}
+.date-input {
+  width: 60px;
+  padding: 5px;
+  margin: 0 5px;
+  border: 1.5px solid #2069A5;
+  border-radius: 5px 5px;
+}
+/* 検索ボタン */
+.search-button-row {
+  text-align: right;
+}
+.search-button {
+  padding: 5px 15px;
+  font-size: 14px;
+  color:white;
+  background-color: #428BCA;
+/*border: 2px solid #2069A5;  枠線
+  border-radius: 5px 5px;*/
+  font-weight: bold;
+}
+/* 勤務実績一覧 */
+.results-title {
+  width: 500px;
+  margin: 0 auto;
+  font-size: 16px;
+}
+/*ログインフォーム*/
+.login-form {
+  text-align: center;
+}
+
+.login-message{
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px;
+  font-size: 25px;
+}
+
+
+.login-display-button-row {
+  text-align: center;
+  margin-top: 20px;
+}
+.return-button, .login-button, .home-button {
+  padding: 7px 30px;
+  margin: 0 70px;
+  font-size: 16px;
+  font-weight: bold; /*　ボタン＿全共通 */
+  color: white; /*　ボタン＿全共通 */
+  border: 2px solid ; /*ボタン＿全共通 */
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+/* 戻るボタンの色 */
+.return-button {
+  background-color: #aaa;
+}
+.return-button:hover {
+  background-color: #888;
+}
+/*ホームへ戻るボタンの色*/
+.home-button {
+  background-color: #666;
+}
+.home-button:hover {
+  background-color: #444;
+}
+/* ログインボタンの色 */
+.login-button {
+  background-color: #428BCA;
+}
+.login-button:hover {
+  background-color: #3071a9;
+}
+
+/* エラー文 */
+.error{
+  margin-top : 5px;
+  margin-bottom: 50px;
+  background-color: #ef0101;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+/*エラーメッセージ*/
+.error-message {
+  text-align: center;
+  color:#ef0101;
+  font-size: 20px;
+}
+.error-message ul {
+	padding-left: 0;
+	list-style: none;
+	display: inline-block;
+}
+.error-message ul li {
+	text-align: left;
+}
