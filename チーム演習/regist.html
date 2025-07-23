@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>新規登録画面</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="logo-box">
+        <span class="logo-m">M</span> COMPANY
+        </div>
+        <div class="title">Prokaryotes</div>
+        <div class="user-info">社員ID XXXXX　宮崎 詩織</div>
+    </div>
+    <div class="top-title">新規登録画面</div>
+    <div class="search-box">
+        <div class="form-row">
+        <label>社員ID XXXXX　宮崎　詩織</label>
+        </div>
+        <div class="form-row">
+        <label>日付</label>
+        <input type="text" class="date-input"> 年
+        <input type="text" class="date-input"> 月
+        <input type="text" class="date-input"> 日
+        </div>
+        <div class="form-row">
+        <label>始業時刻</label>
+        <input type="text" class="text-input">
+        </div>
+        <div class="form-row">
+        <label>終業時刻</label>
+        <input type="text" class="text-input">
+        </div>
+        <div class="form-row">
+        <label>休憩時間</label>
+        <input type="text" class="text-input">
+        </div>
+        <div class="form-row">
+        <label>勤怠区分</label>
+        <div style="display: flex; flex-wrap: wrap;">
+            <label><input type="radio" name="attend" value="1"> 出勤</label>
+            <label><input type="radio" name="attend" value="2"> 年休</label>
+            <label><input type="radio" name="attend" value="3"> 振出</label>
+            <label><input type="radio" name="attend" value="4"> 休日</label>
+            <label><input type="radio" name="attend" value="5"> 振休</label>
+            <label><input type="radio" name="attend" value="6"> 欠勤</label>
+        </div>
+        </div>
+        <div class="display-button-row">
+        <button class="regist-return-button">戻る</button>
+        <button class="resist-confirm-button">確認画面へ</button>
+        </div>
+    </div>
+    <footer class="footer">
+        © 2025 M COMPANY All rights reserved.
+    </footer>
+</body>
+</html>
