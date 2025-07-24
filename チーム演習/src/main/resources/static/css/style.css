@@ -247,7 +247,7 @@ td {
  /* 検索フォーム枠 */
  .search-box {
    border: 4px solid #267EC5;
-   width: 500px;
+   width: 520px;
    margin: 30px auto;
    padding: 20px;
    box-sizing: border-box;
@@ -262,14 +262,12 @@ td {
    box-sizing: border-box;
  }
 
- .search-box3 {
-   border: 4px solid #267EC5;
-   width: 500px;
+.search-box3 {
+  border: 4px solid #267EC5;
+   width: 520px;
    margin: 30px auto;
    padding-left: 60px;
    box-sizing: border-box;
-   align-items: center; 
-   text-align: center;
  }
 
  .form-row {
@@ -296,7 +294,7 @@ td {
 
  label {
    display: inline-block;
-   width: 100px;
+   
  }
  .text-input {
    width: 230px;
@@ -346,9 +344,11 @@ td {
  }
  /* 勤怠区分チェック（右） */
  .right-checkboxes {
+   margin-left: 38px;
    flex: 1 1 200;
    color: #2069a5;
    font-weight: bold;
+
  }
  .checkbox-title {
    margin-bottom: 5px;
@@ -592,9 +592,3 @@ td {
  .user-date ul li {
  	text-align: left;
  }
-
-
-
-
-
-
