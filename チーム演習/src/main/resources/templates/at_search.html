@@ -46,7 +46,7 @@
 	  </div>
 	  <form th:action="@{/at_search}" method="POST" th:object="${AtSearchForm}">
 	  	社員番号<br>
-	     	<input type="text" th:field="*{emp_num}"><br>
+	     	<input type="text" th:field="*{emp_num}">
 	  	<br>
 	     	<input type="submit" value="検索" class="pay-search-button">
 	  </form>
