@@ -1,6 +1,6 @@
 package com.example.demo.repository;
 
-import java.sql.Date;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -67,10 +67,10 @@ public class EmpAtDataRepositoryImpl implements EmpAtDataRepository {
 		List<EmpAtData> result = new ArrayList<EmpAtData>(); // 結果の初期化
 		for (Map<String, Object> one : list) {
 			EmpAtData ead = new EmpAtData();
-			ead.setSt_time((Date)one.get("st_time"));
-			ead.setFn_time((Date)one.get("fn_time"));
-			ead.setRest_time((Date)one.get("rest_time"));
-			ead.setOver_time((Date)one.get("over_time"));
+			ead.setSt_time((Time)one.get("st_time"));
+			ead.setFn_time((Time)one.get("fn_time"));
+			ead.setRest_time((Time)one.get("rest_time"));
+			ead.setOver_time((int)one.get("over_time"));
 			result.add(ead);
 		}
 

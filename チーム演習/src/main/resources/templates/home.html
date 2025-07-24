@@ -2,26 +2,36 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>管理メニュー</title>
+<title>ホーム画面</title>
 <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-
-	<h2>管理メニュー</h2>
-
+	<body>
+	  <div class="home-header">
+	    <div class="top-bar">
+	      <div class="logo-box">
+	        <span class="logo-m">M</span> COMPANY</div>
+	      <div class="title">Prokaryotes</div>
+	    </div>
+	    <div class="top-title">ホーム画面</div>
+	  </div>
+	    <div class="purpose-title"><u>目的を選択してください</u></div>
+	    <div class="purpose">
 	<div>
 	    <form th:action="@{/at_show_search}" method="POST">
 <!--			<label for="emp_num">社員ID：</label>-->
 <!--			<input type="text" id="emp_num" name="emp_num" required>-->
-    		<input type="submit" value="社員用" class="btn">
+    		<input type="submit" value="勤怠関連" class="purpose-emp-button">
  	  	</form>
 	</div>
 	<br>
 	<div>
 	    <form th:action="@{/regist}" method="POST">
-    		<input type="submit" value="総務用" class="btn">
+    		<input type="submit" value="給与出力" class="purpose-admin-button">
  	  	</form>
 	</div>
-
+	<footer class="footer">
+	  © 2025 M COMPANY All rights reserved.
+	</footer>
 </body>
 </html>

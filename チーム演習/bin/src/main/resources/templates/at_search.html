@@ -7,56 +7,17 @@
 </head>
 <body>
 
-	  <div class="top-bar">
-	    <div class="logo-box">
-	      <span class="logo-m">M</span> COMPANY</div>
-	    <div class="title">Prokaryotes</div>
-	    <div class="user-info">社員ID XXXXX　宮崎 詩織</div>
-	  </div>
-	  <div class="top-title">検索画面</div>
-	  <div class="search-box3">
-	  <div class="form-row-with-checks">
-	  <div class="left-inputs">
-	    <div class="form-row1">
-	        <label>日付</label>
-	        <input type="text" class="date-input2"> 年
-	        <input type="text" class="date-input2"> 月
-	        <input type="text" class="date-input2"> 日
-	        </div>
+<h2>勤怠検索</h2>
 
-	    <div class="form-row"style="display: flex; align-items: center;">
-	    <label>社員ID</label>
-	    <div class="emp-ID" style="padding-left:5px;">XXXXXX</div>
-	    </div>
-	  </div>
-	  <div class="right-checkboxes">
-	    <div class="checkbox-title">勤怠区分</div>
-	    <div class="checkbox-group">
-	  <div class="checkbox-row">
-	    <label><input type="checkbox"> 出勤</label>
-	    <label><input type="checkbox"> 年休</label>
-	    <label><input type="checkbox"> 振出</label>
-	  </div>
-	  <div class="checkbox-row">
-	    <label><input type="checkbox"> 休日</label>
-	    <label><input type="checkbox"> 振休</label>
-	    <label><input type="checkbox"> 欠勤</label>
-	  </div>
-	</div>
-	  </div>
-	  <form th:action="@{/at_search}" method="POST" th:object="${AtSearchForm}">
-	  	社員番号<br>
-	     	<input type="text" th:field="*{emp_num}"><br>
-	  	<br>
-	     	<input type="submit" value="検索" class="pay-search-button">
-	  </form>
-	  </div>
-	  </div>
-	  <div class="results-title"><u>勤務実績一覧</u></div>
-
-
+<form th:action="@{/at_search}" method="POST" th:object="${AtSearchForm}">
+	社員番号<br>
+   	<input type="text" th:field="*{emp_num}"><br>
+	<br>
+   	<input type="submit" value="検索" class="btn">
+</form>
 
 <div th:if="${EmpAtDataList} != null">
+	<h2>勤怠一覧</h2>
 
 	<table class="at_list">
 		<tr>
@@ -97,9 +58,6 @@
 
 <br>
 <a th:href="@{/home}">管理メニューに戻る</a>
-<footer class="footer">
-</div>
-  © 2025 M COMPANY All rights reserved.
-</footer>
+
 </body>
 </html>

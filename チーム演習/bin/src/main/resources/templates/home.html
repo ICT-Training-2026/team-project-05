@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>管理メニュー</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+	<h2>管理メニュー</h2>
+
+	<div>
+	    <form th:action="@{/at_show_search}" method="POST">
+<!--			<label for="emp_num">社員ID：</label>-->
+<!--			<input type="text" id="emp_num" name="emp_num" required>-->
+    		<input type="submit" value="社員用" class="btn">
+ 	  	</form>
+	</div>
+	<br>
+	<div>
+	    <form th:action="@{/regist}" method="POST">
+    		<input type="submit" value="総務用" class="btn">
+ 	  	</form>
+	</div>
+
+</body>
+</html>
