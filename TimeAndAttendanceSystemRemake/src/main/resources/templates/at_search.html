@@ -48,24 +48,22 @@
 	    </div>
 
 	    <div class="btn-area">
-	      <button class="search-button">検索</button>
+			<form th:action="@{/at_search}" method="POST" th:object="${AtSearchForm}">
+				社員番号<br>
+			   	<input type="text" th:field="*{emp_num}"><br>
+				<br>
+			   	<input type="submit" value="検索" class="search-button">
+			</form>
 	    </div>
 
 	  </div>
 	</div>
-	  <div class="results-title"><u>勤務実績一覧</u></div>
-
-	
-	
-<form th:action="@{/at_search}" method="POST" th:object="${AtSearchForm}">
-	社員番号<br>
-   	<input type="text" th:field="*{emp_num}"><br>
-	<br>
-   	<input type="submit" value="検索" class="btn">
-</form>
-<form th:action="@{/at_show_regist}" method="POST">
-    <input type="submit" value="新規登録" class="btn">
-</form>
+	<div class="results-header">
+	  <div class="results-title">勤務実績一覧</div>
+	  <form th:action="@{/at_show_regist}" method="POST">
+	    <input type="submit" value="新規登録" class="register-button">
+	  </form>
+	</div>
 
 <div th:if="${EmpAtDataList} != null">
 	<h2>勤怠一覧</h2>
