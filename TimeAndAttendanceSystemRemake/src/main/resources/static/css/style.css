@@ -94,3 +94,491 @@ td {
 .confirm-table td {
     text-align:left;
 }
+
+
+
+/*Chie'sGodFieldEnd↑*/
+/*MiyazakiPrifecture↓*/
+
+body {
+  margin: 0;
+  font-family: 'Meiryo', sans-serif;
+  background-color: rgb(255, 255, 255);
+}
+/* ヘッダー部分全体 */
+.home-header{
+  .top-bar {
+  background-color:rgb(255, 255, 255);
+  display: flex; /* 子要素横並び */
+  align-items: center; /* 中央ぞろえ */
+  padding: 0;  /* ヘッダー内余白無し */
+}
+/* M COMPANY の背景だけ水色 */
+.logo-box {
+  background-color: #404040;
+  color: white;
+  padding: 12px 20px;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 20px;
+  text-shadow: 2px 0px 0px rgb(39, 39, 39);
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+}
+/* 検索画面タイトル */
+.top-title {
+  background-color: #404040;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  text-shadow: 2px 2px 1px rgb(96, 96, 96);
+}
+}
+
+.top-bar {
+  background-color:rgb(255, 255, 255);
+  display: flex; /* 子要素横並び */
+  align-items: center; /* 中央ぞろえ */
+  padding: 0;  /* ヘッダー内余白無し */
+}
+/* M COMPANY の背景だけ水色 */
+.logo-box {
+  background-color: #2dabea;
+  color: white;
+  padding: 12px 20px;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 20px;
+  text-shadow: 2px 0px 0px rgb(39, 39, 39);
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+}
+.logo-m {
+  font-size: 35px; /* ← 通常より大きく */
+}
+/* Prokaryotes の見た目 */
+.title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Comic Sans MS', cursive;
+  font-weight: bold;
+  font-size: 35px;
+  color: black;
+}
+/* 右上のユーザー情報 */
+.user-info {
+  margin-left: auto;
+  padding-right: 20px;
+  font-size: 14px;
+  z-index: 1;
+}
+/* 検索画面タイトル */
+.top-title {
+  background-color: #2dabea;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  text-shadow: 2px 2px 1px rgb(96, 96, 96);
+}
+
+/*↑ヘッダー部ここまでーーーーーーーーーーーーーXD*/
+
+/*目的（目的を選択してください）*/
+.purpose-title {
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px;
+  font-size: 25px;
+}
+
+/*勤怠関連と給与出力のボタン*/
+.purpose {
+  display: flex;
+  flex-direction: column; /* 縦に並べるため */
+  align-items: center; /* 中央揃え */
+  height: 30vh; /* 画面全体を覆う高さ */
+}
+
+.purpose-emp-button{
+  text-align: center;
+  padding: 7px 30px;
+  margin: 0 70px;
+  font-size: 16px;
+  font-weight: bold; /*　ボタン＿全共通 */
+  color: white; /*　ボタン＿全共通 */
+  border: 2px solid ; /*ボタン＿全共通 */
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.purpose-admin-button{
+  text-align: center;
+  padding: 7px 30px;
+  margin: 0 70px;
+  font-size: 16px;
+  font-weight: bold; /*　ボタン＿全共通 */
+  color: white; /*　ボタン＿全共通 */
+  border: 2px solid ; /*ボタン＿全共通 */
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* 勤怠関連の色 */
+.purpose-emp-button {
+  background-color: #428BCA;;
+}
+.purpose-emp-button:hover {
+  background-color: #3071a9;
+}
+/* 給与出力の色 */
+.purpose-admin-button {
+  background-color: #F7941D;
+}
+.purpose-admin-button:hover {
+  background-color: #ca7917;
+}
+
+/* 検索フォーム枠 */
+.search-box {
+  border: 4px solid #267EC5;
+  width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* 検索フォーム枠2!(pay_search) */
+.search-box2 {
+  border: 4px solid #267EC5;
+  width: 500px;
+  margin: 30px auto;
+  padding-left: 40px;
+  box-sizing: border-box;
+}
+
+
+.form-row {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color:#2069a5;
+  font-weight: bold;
+}
+
+
+label {
+  display: inline-block;
+  width: 120px;
+}
+.text-input {
+  width: 230px;
+  padding: 5px;
+  border: 1.5px solid #2069A5;
+  border-radius: 5px 5px;
+}
+.date-input {
+  width: 60px;
+  padding: 5px;
+
+  border: 1.5px solid #2069A5;
+  border-radius: 5px 5px;
+}
+
+.date-input2 {
+  width: 45px;
+  padding: 5px;
+  margin: 10 px;
+  border: 1.5px solid #2069A5;
+  border-radius: 5px 5px;
+}
+
+/*社員＿検索画面のチェックボックス*
+.form-row-with-checks {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap; /* 小さい画面で折り返す *
+}
+*/
+.form-row-with-checks {
+  margin: 20px;
+  width:100%;
+  max-width: 700px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
+
+/* 入力欄（左） */
+.left-inputs {
+  flex: 1 1 300px;
+}
+/* 勤怠区分チェック（右） */
+.right-checkboxes {
+  flex: 1 1 200;
+  color: #2069a5;
+  font-weight: bold;
+}
+.checkbox-title {
+  margin-bottom: 5px;
+}
+
+/*勤怠区分チェックボックス（2行で表示＋左右間隔縮小） */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.checkbox-row {
+  display: flex;
+  gap: 10px; /* 左右の間隔を小さめに */
+}
+
+/*勤怠区分だけ編集できるよ
+.checkbox-row label {
+  white-space: nowrap;
+  font-weight: normal;
+  
+  
+  
+  
+  color: #2069A5;
+}
+
+*/
+
+/* 検索ボタン */
+.search-button-row {
+  text-align: right;
+}
+
+/*ボタン集の中に移動しけり
+.search-button {
+  padding: 5px 15px;
+  font-size: 14px;
+  color:white;
+  background-color: #428BCA;
+  border: 2px solid #2069A5;  枠線
+  border-radius: 5px 5px;
+  font-weight: bold;
+} */
+
+/* 勤務実績一覧 */
+.results-title {
+  width: 500px;
+  margin: 0 auto;
+  font-size: 16px;
+}
+/*ログインフォーム*/
+.login-form {
+  text-align: center;
+}
+
+/*ログインメッセージ*/
+.login-message{
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px;
+  font-size: 25px;
+}
+
+/*ボタン2個の画面*/
+.display-button-row {
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+.regist-return-button, .resist-confirm-button, .search-return-button {
+  padding: 7px 30px;
+  margin: 0 20px;
+  font-size: 16px;
+  font-weight: bold; /*　ボタン＿全共通 */
+  color: white; /*　ボタン＿全共通 */
+  border: 2px solid ; /*ボタン＿全共通 */
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pay-search-button{
+  padding: 7px 30px;
+  margin: 15px 150px;
+  font-size: 16px;
+  font-weight: bold; /*　ボタン＿全共通 */
+  color: white; /*　ボタン＿全共通 */
+  border: 2px solid ; /*ボタン＿全共通 */
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ログイン＆検索ボタンの色 */
+.pay-search-button {
+  background-color: #428BCA;
+}
+.pay-search-button:hover{
+  background-color: #3071a9;
+}
+
+
+.return-button, .login-button, .home-button, .search-button, .regist-button, .edit-button, .output-button{
+  padding: 7px 30px;
+  margin: 0 70px;
+  font-size: 16px;
+  font-weight: bold; /*　ボタン＿全共通 */
+  color: white; /*　ボタン＿全共通 */
+  border: 2px solid ; /*ボタン＿全共通 */
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+/* 戻るボタンの色 */
+.return-button, .regist-return-button, .search-return-button{
+  background-color: #aaa;
+}
+.return-button:hover, .regist-return-button:hover, .search-return-button:hover{
+  background-color: #888;
+}
+/*ホームへ戻るボタンの色*/
+.home-button {
+  background-color: #666;
+}
+.home-button:hover {
+  background-color: #444;
+}
+
+/* ログイン＆検索ボタンの色 */
+.login-button, .search-button, .resist-confirm-button {
+  background-color: #428BCA;
+}
+.login-button:hover, .search-button:hover, .resist-confirm-button:hover {
+  background-color: #3071a9;
+}
+
+/* 登録ボタンの色 */
+.regist-button {
+  background-color: #4259ca;
+}
+.regist-button:hover {
+  background-color: #4230a9;
+}
+/* 編集ボタンの色 */
+.edit-button, .output-button {
+  background-color: #31b659;
+}
+.edit-button:hover, .output-button:hover {
+  background-color: #19973f;
+}
+/* 削除ボタンの色 */
+.delete-button {
+  background-color: #ca4242;
+}
+.delete-button:hover {
+  background-color: #a93030;
+}
+
+/*検索画面に戻るボタン*/
+.search-return-button{
+  display: block;
+  margin: auto;
+}
+
+.footer {
+  position: relative;  /* または absolute */
+  bottom: 0;           /* 画面の底に配置 */
+  width: 100%;         /* 幅を100%に設定 */
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+  padding: 20px 0;    /* 上下のパディング */
+  margin-top: 20px;   /* 上部にマージンを付けることで他の要素との間隔を作る */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.page-content {
+  flex: 1; /* 残りの高さを埋める */
+}
+
+/* エラー文 ラベル*/
+.error{
+  margin-top : 5px;
+  margin-bottom: 50px;
+  background-color: #ef0101;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+/*エラーメッセージ中央左寄せ*/
+.error-message {
+  text-align: center;
+  color:#ef0101;
+  font-size: 20px;
+}
+.error-message ul {
+	padding-left: 0;
+	list-style: none;
+	display: inline-block;
+}
+.error-message ul li {
+	text-align: left;
+}
+
+/*確認画面*/
+.time {
+  font-size: 17px;
+  text-align: center;
+  column-count: 2;
+  width: fit-content;
+}
+
+.check-message{
+  text-align: center;
+}
+.regist-check{
+  color:blue;
+}
+.edit-check, .output-check{
+  color:green;
+}
+.delete-check{
+  color:red;
+}
+/*出力内容中央左寄せ*/
+.user-date {
+  font-size: 18px;
+  text-align: center;
+}
+.user-date ul {
+	padding-left: 0;
+	list-style: none;
+	display: inline-block;
+}
+.user-date ul li {
+	text-align: left;
+}
+
+
+
+
+
+
