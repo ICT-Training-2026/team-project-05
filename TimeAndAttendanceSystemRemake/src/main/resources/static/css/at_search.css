@@ -99,6 +99,10 @@
   background-color: #3071a9;
 }
 
+.register-button:hover {
+  background-color: #3071a9;
+}
+
 .results-title{
 	display: flex;
 	align-items: center;

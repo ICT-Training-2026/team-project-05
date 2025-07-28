@@ -12,8 +12,8 @@ h1 {
 }
 
 h2 {
-	font-size: 28px;
-	background-color: brown;
+	font-size: 20px;
+	background-color: #2dabea;
 	color: white;
 	padding-top: 6px;
 	padding-bottom: 6px;
@@ -43,7 +43,7 @@ input.catch {
 }
 
 table {
-	border: 1px solid gray;
+	border: 2px solid rgb(0, 0, 0);
 	margin-left: auto;
 	margin-right: auto;
 	width: 80%; 					/* テーブル横幅 */
@@ -51,14 +51,14 @@ table {
 }
 
 th {
-	border: 1px solid gray;
+	border: 2px solid rgb(0, 0, 0);
     text-align:center;
-    background-color: goldenrod;
+    background-color: rgb(255, 255, 255);
     height: 32px;
 }
 
 td {
-	border: 1px solid gray;
+	border: 2px solid rgb(0, 0, 0);
 	text-align: center;
 	height: 24px;
 }
@@ -68,17 +68,36 @@ td {
 }
 
 /* テーブル内ボタン */
-.tbtn {
-	border: 2px solid steelblue;
+.e-tbtn {
+	border: 2px solid rgb(34, 142, 26);
 	padding: 2px 10px;
 	font-size: 16px;
-	color: steelblue;
+	color: rgb(255, 255, 255);
 	cursor:pointer;
+	background-color: rgb(84, 225, 81);
+	transition: background-color 0.3s ease;
+	font-weight: bold;
 }
 
-.tbtn:hover {
-  color: #fff;
-  background: steelblue;
+.d-tbtn {
+	border: 2px solid rgb(134, 23, 23);
+	padding: 2px 10px;
+	font-size: 16px;
+	color: rgb(255, 255, 255);
+	cursor:pointer;
+	background-color: rgb(225, 81, 81);
+	transition: background-color 0.3s ease;
+	font-weight: bold;
+}
+
+.e-tbtn:hover{
+  color: rgb(255, 255, 255);
+  background: rgb(65, 214, 61);
+}
+
+.d-tbtn:hover {
+  color: rgb(255, 255, 255);
+  background: rgb(202, 36, 36);
 }
 
 /* 確認画面用 */
