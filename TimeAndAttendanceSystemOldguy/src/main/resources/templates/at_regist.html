@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>勤怠登録</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+	<h2>勤怠登録</h2>
+
+    <form th:action="@{/at_regist}" method="POST" th:object="${atRegistForm}">
+		【社員番号】<br>
+		<input type="text" th:field="*{emp_num}"><br>
+		<div th:if="${#fields.hasErrors('emp_num')}" th:errors="*{emp_num}" class="error-msg"></div>
+		<br>
+    	【日付】 YYYY-MM-DD<br>
+    	<input type="date" th:field="*{date}"><br>
+    	<div th:if="${#fields.hasErrors('date')}" th:errors="*{date}" class="error-msg"></div>
+		<br>
+    	【勤怠区分】<br>	
+    	<input type="text" th:field="*{at_type_code}"><br>
+    	<div th:if="${#fields.hasErrors('at_type_code')}" th:errors="*{at_type_code}" class="error-msg"></div>
+		<br>
+		【始業時刻】 HH:MM:SS<br>
+		<input type="time" step="1" th:field="*{st_time}"><br>
+		<div th:if="${#fields.hasErrors('st_time')}" th:errors="*{st_time}" class="error-msg"></div>
+		<br>
+		【終業時刻】 HH:MM:SS<br>
+		<input type="time" step="1" th:field="*{fn_time}"><br>
+		<div th:if="${#fields.hasErrors('fn_time')}" th:errors="*{fn_time}" class="error-msg"></div>
+		<br>
+		【休憩時間】 HH:MM:SS<br>
+		<input type="time" step="1" th:field="*{rest_time}"><br>
+		<div th:if="${#fields.hasErrors('rest_time')}" th:errors="*{rest_time}" class="error-msg"></div>
+		<br>
+    	<input type="submit" value="登録" class="btn">
+    </form>
+
+	<br>
+	<a th:href="@{/at_show_search}">戻る</a>
+
+</body>
+</html>

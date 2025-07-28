@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>勤怠情報・一覧</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<h2>勤怠検索</h2>
+
+<form th:action="@{/at_search}" method="POST" th:object="${AtSearchForm}">
+	社員番号<br>
+   	<input type="text" th:field="*{emp_num}"><br>
+	<br>
+   	<input type="submit" value="検索" class="btn">
+</form>
+<form th:action="@{/at_show_regist}" method="POST">
+    <input type="submit" value="新規登録" class="btn">
+</form>
+
+<div th:if="${EmpAtDataList} != null">
+	<h2>勤怠一覧</h2>
+
+	<table class="at_list">
+		<tr>
+			<thth colspan="2"><th>ツール</th><th>ツール</th><th>社員番号</th><th>日付</th><th>勤怠区分</th><th>始業時刻</th><th>終業時刻</th><th>休憩時間</th><th>累積超過時間</th>
+		</tr>
+
+		<tr th:each="ead : ${EmpAtDataList}">
+			<td>
+				<form th:action="@{/at_show_edit}" method="POST">
+					<input type="hidden" name="emp_num" th:value="${ead.emp_num}">
+					<input type="hidden" name="date" th:value="${ead.date}">
+					<input type="hidden" name="at_type_code" th:value="${ead.at_type_code}">
+					<input type="hidden" name="st_time" th:value="${ead.st_time}">
+					<input type="hidden" name="fn_time" th:value="${ead.fn_time}">
+					<input type="hidden" name="rest_time" th:value="${ead.rest_time}">
+					<input type="hidden" name="over_time" th:value="${ead.over_time}">
+					<input type="submit" value="編集" class="tbtn">
+				</form>
+			</td>
+			<td>
+				<form th:action="@{/delete}" method="POST">
+					<input type="hidden" name="emp_num" th:value="${ead.emp_num}">
+					<input type="hidden" name="date" th:value="${ead.date}">
+					<input type="hidden" name="at_type_code" th:value="${ead.at_type_code}">
+					<input type="hidden" name="st_time" th:value="${ead.st_time}">
+					<input type="hidden" name="fn_time" th:value="${ead.fn_time}">
+					<input type="hidden" name="rest_time" th:value="${ead.rest_time}">
+					<input type="hidden" name="over_time" th:value="${ead.over_time}">
+					<input type="submit" value="削除" class="tbtn">
+				</form>
+			</td>
+			<td th:text="${ead.emp_num}"></td>
+			<td th:text="${ead.date}"></td>
+			<td th:text="${ead.at_type_code}"></td>
+			<td th:text="${ead.st_time}"></td>
+			<td th:text="${ead.fn_time}"></td>
+			<td th:text="${ead.rest_time}"></td>
+			<td th:text="${ead.over_time}"></td>
+		</tr>
+
+	</table>
+
+</div>
+
+<br>
+<a th:href="@{/home}">管理メニューに戻る</a>
+
+</body>
+</html>

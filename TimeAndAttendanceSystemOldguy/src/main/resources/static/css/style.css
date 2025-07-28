@@ -1,0 +1,117 @@
+@charset "UTF-8";
+
+/* ヘッダー部分全体 */
+.home-header{
+  .top-bar {
+  background-color:rgb(255, 255, 255);
+  display: flex; /* 子要素横並び */
+  align-items: center; /* 中央ぞろえ */
+  padding: 0;  /* ヘッダー内余白無し */
+}
+.footer {
+  position: relative;  /* または absolute */
+  bottom: 0;           /* 画面の底に配置 */
+  width: 100%;         /* 幅を100%に設定 */
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+  padding: 20px 0;    /* 上下のパディング */
+  margin-top: 20px;   /* 上部にマージンを付けることで他の要素との間隔を作る */
+}
+
+body {
+  margin: 0;
+  font-family: 'Meiryo', sans-serif;
+  background-color: rgb(255, 255, 255);
+}
+
+h1 {
+	font-size: 32px;
+    color: brown;
+}
+
+h2 {
+	font-size: 28px;
+	background-color: brown;
+	color: white;
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+
+/* 通常のボタン */
+.btn {
+	border: 2px solid brown;
+	padding: 4px 20px;
+	font-size: 20px;
+	color: brown;
+	cursor:pointer;
+}
+
+.btn:hover {
+  color: #fff;
+  background: brown;
+}
+
+/* コメント入力の幅 */
+input.catch {
+	width: 400px;
+}
+
+.error-msg {
+    color: red;
+}
+
+table {
+	border: 1px solid gray;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%; 					/* テーブル横幅 */
+	border-collapse:  collapse; 	/* 境界線を共有 */
+}
+
+th {
+	border: 1px solid gray;
+    text-align:center;
+    background-color: goldenrod;
+    height: 32px;
+}
+
+td {
+	border: 1px solid gray;
+	text-align: center;
+	height: 24px;
+}
+
+.restaurant-list {
+    background-color: wheat;
+}
+
+/* テーブル内ボタン */
+.tbtn {
+	border: 2px solid steelblue;
+	padding: 2px 10px;
+	font-size: 16px;
+	color: steelblue;
+	cursor:pointer;
+}
+
+.tbtn:hover {
+  color: #fff;
+  background: steelblue;
+}
+
+/* 確認画面用 */
+.confirm-table {
+    background-color: lightgray;
+	width: 50%; 					/* テーブル横幅 */
+}
+
+.confirm-table .guide {
+	width: 30%; 					/* テーブル横幅 */
+}
+
+.confirm-table td {
+    text-align:left;
+}
+
+}
