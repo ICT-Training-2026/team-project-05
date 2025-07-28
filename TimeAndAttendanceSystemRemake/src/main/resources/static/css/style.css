@@ -100,22 +100,6 @@ td {
   background: rgb(202, 36, 36);
 }
 
-/* 確認画面用 */
-.confirm-table {
-    background-color: lightgray;
-	width: 50%; 					/* テーブル横幅 */
-}
-
-.confirm-table .guide {
-	width: 30%; 					/* テーブル横幅 */
-}
-
-.confirm-table td {
-    text-align:left;
-}
-
-
-
 /*Chie'sGodFieldEnd↑*/
 /*MiyazakiPrifecture↓*/
 
