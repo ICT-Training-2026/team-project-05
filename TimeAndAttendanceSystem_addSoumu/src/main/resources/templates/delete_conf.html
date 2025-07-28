@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>勤怠削除確認</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+	<h2>勤怠削除確認</h2>
+
+	<table class="confirm-table" th:object="${atDeleteForm}">
+		<tr>
+			<td class="guide">【社員番号】</td>
+			<td th:text="*{emp_num}"></td>
+		</tr>
+		<tr>
+			<td class="guide">【日付】</td>
+			<td th:text="*{date}"></td>
+		</tr>
+		<tr>
+			<td class="guide">【勤怠区分】</td>
+			<td th:text="*{at_type_code}"></td>
+		</tr>
+		<tr>
+			<td class="guide">【始業時刻】</td>
+			<td th:text="*{st_time}"></td>
+		</tr>
+		<tr>
+			<td class="guide">【終業時刻】</td>
+			<td th:text="*{fn_time}"></td>
+		</tr>
+		<tr>
+			<td class="guide">【休憩時間】</td>
+			<td th:text="*{rest_time}"></td>
+		</tr>
+	</table>
+	<br>
+
+    <form th:action="@{/delete_conf}" method="POST" th:object="${atDeleteForm}">
+		<input type="hidden" th:field="*{emp_num}">
+		<input type="hidden" th:field="*{date}">
+		<input type="hidden" th:field="*{at_type_code}">
+		<input type="hidden" th:field="*{st_time}">
+		<input type="hidden" th:field="*{fn_time}">
+		<input type="hidden" th:field="*{rest_time}">
+    	<input type="submit" value="削除実行" class="btn">
+   	</form>
+	
+	<br>
+	<a th:href="@{/at_show_search}">戻る</a>
+
+	<br>
+	<a th:href="@{/home}">管理メニューに戻る</a>
+
+</body>
+</html>

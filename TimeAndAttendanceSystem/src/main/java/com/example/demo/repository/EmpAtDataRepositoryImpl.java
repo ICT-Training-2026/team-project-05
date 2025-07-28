@@ -1,6 +1,5 @@
 package com.example.demo.repository;
 
-import java.sql.Date;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
@@ -70,8 +69,8 @@ public class EmpAtDataRepositoryImpl implements EmpAtDataRepository {
 			EmpAtData ead = new EmpAtData();
 			ead.setSt_time((Time)one.get("st_time"));
 			ead.setFn_time((Time)one.get("fn_time"));
-			ead.setRest_time((Date)one.get("rest_time"));
-			ead.setOver_time((Date)one.get("over_time"));
+			ead.setRest_time((Time)one.get("rest_time"));
+			ead.setOver_time((int)one.get("over_time"));
 			result.add(ead);
 		}
 
