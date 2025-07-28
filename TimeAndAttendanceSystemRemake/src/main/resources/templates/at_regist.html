@@ -2,43 +2,66 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>勤怠登録</title>
+<title>新規登録画面</title>
 <link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet" th:href="@{/css/at_regist.css}">
 </head>
 <body>
+<!--	header定期-->
 
-	<h2>勤怠登録</h2>
+	<div class="top-bar">
+	  <div class="logo-box">
+	    <span class="logo-m">M</span> COMPANY</div>
+	  <div class="title">Prokaryotes</div>
+	  <div class="user-info">社員ID XXXXX　宮崎 詩織</div>
+	</div>
+	<div class="top-title">新規登録画面</div><br>
 
+  <div class="regist-form">
     <form th:action="@{/at_regist}" method="POST" th:object="${atRegistForm}">
-		【社員番号】<br>
-		<input type="text" th:field="*{emp_num}"><br>
-		<div th:if="${#fields.hasErrors('emp_num')}" th:errors="*{emp_num}" class="error-msg"></div>
-		<br>
-    	【日付】 YYYY-MM-DD<br>
-    	<input type="date" th:field="*{date}"><br>
+	  <div class="row">
+	    <label>社員ID</label>
+	    <span class="emp-id">XXXXXX</span>
+	  </div><br>
+	  <div class="row">
+    	<label>日付</label><span class="at-date">YYYY-MM-DD</span>
+    	<input type="date" th:field="*{date}">
     	<div th:if="${#fields.hasErrors('date')}" th:errors="*{date}" class="error-msg"></div>
-		<br>
-    	【勤怠区分】<br>
-    	<input type="text" th:field="*{at_type_code}"><br>
-    	<div th:if="${#fields.hasErrors('at_type_code')}" th:errors="*{at_type_code}" class="error-msg"></div>
-		<br>
-		【始業時刻】 HH:MM:SS<br>
-		<input type="time" step="1" th:field="*{st_time}"><br>
+	  </div><br>
+	  <div class="row">
+		<label>始業時刻</label><span class="at-time">HH:MM:SS</span>
+		<input type="time" step="1" th:field="*{st_time}">
 		<div th:if="${#fields.hasErrors('st_time')}" th:errors="*{st_time}" class="error-msg"></div>
-		<br>
-		【終業時刻】 HH:MM:SS<br>
-		<input type="time" step="1" th:field="*{fn_time}"><br>
+	  </div><br>
+	  <div class="row">
+		<label>終業時刻</label><span class="at-time">HH:MM:SS</span>
+		<input type="time" step="1" th:field="*{fn_time}">
 		<div th:if="${#fields.hasErrors('fn_time')}" th:errors="*{fn_time}" class="error-msg"></div>
-		<br>
-		【休憩時間】 HH:MM:SS<br>
-		<input type="time" step="1" th:field="*{rest_time}"><br>
+	  </div><br>
+	  <div class="row">
+		<label>休憩時間</label><span class="at-time">HH:MM:SS</span>
+		<input type="time" step="1" th:field="*{rest_time}">
 		<div th:if="${#fields.hasErrors('rest_time')}" th:errors="*{rest_time}" class="error-msg"></div>
-		<br>
-    	<input type="submit" value="登録" class="btn">
+	  </div><br>
+	    <div class="checkbox-section">
+	      <div class="checkbox-title">勤怠区分</div>
+	      <div class="checkbox-row">
+	        <label><input type="checkbox"> 出勤</label>
+	        <label><input type="checkbox"> 年休</label>
+	        <label><input type="checkbox"> 振出</label>
+	      </div>
+	      <div class="checkbox-row">
+	        <label><input type="checkbox"> 休日</label>
+	        <label><input type="checkbox"> 振休</label>
+	        <label><input type="checkbox"> 欠勤</label>
+	      </div>
+	    </div>
+	      <input type="submit" value="登録" class="regist-button">
     </form>
-
-	<br>
-	<a th:href="@{/at_show_search}">戻る</a>
+   </div>
+      <form th:action="@{/at_show_search}" method="POST">
+        <input type="submit" value="戻る"class="return-button" >
+      </form>
 
 </body>
 </html>

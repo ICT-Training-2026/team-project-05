@@ -1,0 +1,65 @@
+.regist-form{
+  border: 4px solid #267EC5;
+  width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  color: #2069A5;
+  font-weight: bold;
+}
+
+.emp-row {
+  margin-left: 66px; /* 日付ラベルの幅と合わせる */
+}
+
+.emp-id, .at-date, .at-time {
+  font-weight: normal;
+  color: black;
+}
+
+.date-input {
+  width: 45px;
+  padding: 5px;
+  border: 1.5px solid #2069A5;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.checkbox-section {
+  text-align: center;
+}
+
+.checkbox-title {
+  font-weight: bold;
+  color: #2069A5;
+  margin-bottom: 10px;
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 20px;
+  justify-items: center;
+}
+
+.checkbox-row {
+  display: flex;
+  justify-content: center; /* ← これで中央揃え！ */
+  gap: 20px;               /* 各チェックボックス間の余白 */
+  margin-bottom: 5px;
+}
+
+
