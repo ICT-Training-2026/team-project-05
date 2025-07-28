@@ -2,12 +2,20 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>勤怠登録</title>
+<title>新規登録画面</title>
 <link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet" th:href="@{/css/at_search.css}">
 </head>
 <body>
+<!--	header定期-->
 
-	<h2>勤怠登録</h2>
+	<div class="top-bar">
+	  <div class="logo-box">
+	    <span class="logo-m">M</span> COMPANY</div>
+	  <div class="title">Prokaryotes</div>
+	  <div class="user-info">社員ID XXXXX　宮崎 詩織</div>
+	</div>
+	<div class="top-title">新規登録画面</div>
 
     <form th:action="@{/at_regist}" method="POST" th:object="${atRegistForm}">
 		【社員番号】<br>
