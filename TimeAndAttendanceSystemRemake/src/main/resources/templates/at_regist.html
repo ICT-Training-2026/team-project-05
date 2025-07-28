@@ -45,19 +45,23 @@
 	  </div><br>
 	    <div class="checkbox-section">
 	      <div class="checkbox-title">勤怠区分</div>
-	      <div class="checkbox-row">
-	        <label><input type="checkbox"> 出勤</label>
-	        <label><input type="checkbox"> 年休</label>
-	        <label><input type="checkbox"> 振出</label>
+		  <div class="checkbox-row" style="display: flex; flex-wrap: wrap;">
+		        <label><input type="radio" th:field="*{at_type_code}" value="01"> 出勤</label>
+		        <label><input type="radio" th:field="*{at_type_code}" value="02"> 年休</label>
+		        <label><input type="radio" th:field="*{at_type_code}" value="03"> 振出</label>
 	      </div>
-	      <div class="checkbox-row">
-	        <label><input type="checkbox"> 休日</label>
-	        <label><input type="checkbox"> 振休</label>
-	        <label><input type="checkbox"> 欠勤</label>
-	      </div>
-	    </div>
-	      <input type="submit" value="登録" class="regist-button">
-    </form>
+		  <div class="checkbox-row" style="display: flex; flex-wrap: wrap;">
+				<label><input type="radio" th:field="*{at_type_code}" value="04"> 休日</label>
+			    <label><input type="radio" th:field="*{at_type_code}" value="05"> 振休</label>
+			    <label><input type="radio" th:field="*{at_type_code}" value="06"> 欠勤</label>
+			      </div>
+			    </div>
+			  </form>
+			</div>
+			<div class="display-button-row">
+			  <form th:action="@{/regist_conf}" method="POST"> 
+			    <input type="submit" value="登録" class="regist-button">
+			  </form>
    </div>
       <form th:action="@{/at_show_search}" method="POST">
         <input type="submit" value="戻る"class="return-button" >

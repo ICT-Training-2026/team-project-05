@@ -21,7 +21,7 @@ public class AtRegistForm {
 	private Date date;
 
 	@Size(min=2,max=2, message="正しいコードを入力してください")
-	private String At_type_code;
+	private String at_type_code;
 	
 	@NotNull
 	@PastOrPresent(message = "過去または現在の時間を入力してください")
