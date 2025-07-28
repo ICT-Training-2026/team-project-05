@@ -115,7 +115,8 @@
 	align-items: center; /* ← これで中央揃え！ */
 	gap: 20px;               /* 各チェックボックス間の余白 */
 	margin-bottom: 5px;
-	margin-right: 500px;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 
