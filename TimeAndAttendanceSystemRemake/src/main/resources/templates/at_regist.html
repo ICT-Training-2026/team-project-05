@@ -18,35 +18,46 @@
 	<div class="top-title">新規登録画面</div><br>
 
     <form th:action="@{/at_regist}" method="POST" th:object="${atRegistForm}">
-		【社員番号】
-		<input type="text" th:field="*{emp_num}"><br>
-		<div th:if="${#fields.hasErrors('emp_num')}" th:errors="*{emp_num}" class="error-msg"></div>
-		<br>
-    	【日付】 YYYY-MM-DD
+
+	    <label>社員ID</label>
+	    <span class="emp-id">XXXXXX</span><br>
+    	<label>日付</label>YYYY-MM-DD
     	<input type="date" th:field="*{date}"><br>
     	<div th:if="${#fields.hasErrors('date')}" th:errors="*{date}" class="error-msg"></div>
 		<br>
-    	【勤怠区分】
+    	<label>勤怠区分</label>
     	<input type="text" th:field="*{at_type_code}"><br>
     	<div th:if="${#fields.hasErrors('at_type_code')}" th:errors="*{at_type_code}" class="error-msg"></div>
 		<br>
-		【始業時刻】 HH:MM:SS
+		<label>始業時刻</label> HH:MM:SS
 		<input type="time" step="1" th:field="*{st_time}"><br>
 		<div th:if="${#fields.hasErrors('st_time')}" th:errors="*{st_time}" class="error-msg"></div>
 		<br>
-		【終業時刻】 HH:MM:SS
+		<label>終業時刻</label> HH:MM:SS
 		<input type="time" step="1" th:field="*{fn_time}"><br>
 		<div th:if="${#fields.hasErrors('fn_time')}" th:errors="*{fn_time}" class="error-msg"></div>
 		<br>
-		【休憩時間】 HH:MM:SS
+		<label>休憩時間</label> HH:MM:SS
 		<input type="time" step="1" th:field="*{rest_time}"><br>
 		<div th:if="${#fields.hasErrors('rest_time')}" th:errors="*{rest_time}" class="error-msg"></div>
 		<br>
-    	<input type="submit" value="登録" class="btn">
+	    <div class="checkbox-section">
+	      <div class="checkbox-title">勤怠区分</div>
+	      <div class="checkbox-row">
+	        <label><input type="checkbox"> 出勤</label>
+	        <label><input type="checkbox"> 年休</label>
+	        <label><input type="checkbox"> 振出</label>
+	      </div>
+	      <div class="checkbox-row">
+	        <label><input type="checkbox"> 休日</label>
+	        <label><input type="checkbox"> 振休</label>
+	        <label><input type="checkbox"> 欠勤</label>
+	      </div>
+	    </div>
+	      <input type="submit" value="登録" class="regist-button">
     </form>
-
-	<br>
-	<a th:href="@{/at_show_search}">戻る</a>
-
+      <form th:action="@{/at_show_search}" method="POST">
+        <input type="submit" value="戻る"class="return-button" >
+      </form>
 </body>
 </html>
