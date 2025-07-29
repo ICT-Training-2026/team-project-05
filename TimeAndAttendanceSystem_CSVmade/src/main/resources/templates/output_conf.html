@@ -6,8 +6,22 @@
 <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-
-	<h2>勤怠出力確認</h2>
+	<!--	header定期-->
+			
+			<div class="top-bar">
+				<a href="/home" class="logo-box">
+				  <div class="logo">
+				    <span class="logo-m">M</span> <span class="logo-company">COMPANY</span>
+				  </div>
+				</a>
+			  <div class="title">Prokaryotes</div>
+			  
+			  <div class="user-info">社員ID <a th:text="*{emp_num}"></a>　宮崎 詩織</div>
+			 
+			</div>
+			<div class="top-title">勤怠出力確認画面</div>
+			
+			<br>
 
 	<table class="confirm-table" th:object="${OutPutForm}">
 		<tr>
@@ -34,7 +48,7 @@
 		<input type="hidden" th:field="*{emp_name}">
 		<input type="hidden" th:field="*{total_time}">
 		<input type="hidden" th:field="*{over_time}">
-    	<input type="submit" value="出力実行" class="btn">
+    	<input type="submit" value="出力実行" class="login-button">
    	</form>
 	
 	<br>
@@ -43,5 +57,11 @@
 	<br>
 	<a th:href="@{/home}">管理メニューに戻る</a>
 
+	
+	<!--footer定期-->
+	 <footer class="footer">
+	   © 2025 M COMPANY All rights reserved.
+	 </footer>
+	
 </body>
 </html>

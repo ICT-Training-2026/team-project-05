@@ -64,29 +64,15 @@ public class PaySearchController {
     	Date date = form.getDate();
     	String atTypeCode = form.getAt_type_code();
     	
-    	List<EmpAtDataSoumu> list = paySearchService.findByData(team_code, empNum, date, atTypeCode); 
+    	List<EmpAtDataSoumu> list = paySearchService.findByData(team_code,empNum,date,atTypeCode); 
+        
+    	if(list.size()>0) {
+        	model.addAttribute("EmpAtDataSoumuList", list);
+        }
     	
-    	if (list.size() > 0) {
-    		model.addAttribute("EmpAtDataSoumuList", list);
-    	}
-
-    	// ✅ 条件判定してフラグを渡す
-    	boolean hasEmpNumOnly = (empNum != null && !empNum.isEmpty()) && (team_code == null || team_code.isEmpty());
-    	boolean hasTeamCodeOnly = (team_code != null && !team_code.isEmpty()) && (empNum == null || empNum.isEmpty());
-    	boolean hasBoth = (empNum != null && !empNum.isEmpty()) && (team_code != null && !team_code.isEmpty());
-
-    	model.addAttribute("hasEmpNumOnly", hasEmpNumOnly);
-    	model.addAttribute("hasTeamCodeOnly", hasTeamCodeOnly);
-    	model.addAttribute("hasBoth", hasBoth);
-    	model.addAttribute("showOutputButton", hasBoth); // 出力ボタン表示用
-
     	model.addAttribute("PaySearchForm", form);
-
-    	return "pay_search";
+        
+        return "pay_search";
     }
+
 }
-
-
-
-
-

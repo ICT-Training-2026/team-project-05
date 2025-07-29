@@ -6,9 +6,25 @@
 <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
+	<!--	header定期-->
+			
+			<div class="top-bar">
+				<a href="/home" class="logo-box">
+				  <div class="logo">
+				    <span class="logo-m">M</span> <span class="logo-company">COMPANY</span>
+				  </div>
+				</a>
+			  <div class="title">Prokaryotes</div>
 
-<h2>勤怠検索(総務用)</h2>
+			</div>
+			<div class="top-title">勤怠検索(総務用)画面</div>
 
+			
+
+			<br>
+
+			<div class="form-row">	
+			
 <form th:action="@{/pay_search}" method="POST" th:object="${PaySearchForm}">
   部署ID<input type="text" th:field="*{team_code}"/><br>
   社員番号<input type="text" th:field="*{emp_num}"/><br>
@@ -21,48 +37,43 @@
     <option value="03">休暇</option>
   </select>
   <br><br>
-  <input type="submit" value="検索" class="btn"/>
+  <input type="submit" value="検索" class="login-button"/>
 </form>
+
+</div>
 
 <div th:if="${EmpAtDataSoumuList} != null">
 	<h2>勤怠一覧</h2>
 
 	<table class="at_list">
 		<tr>
-			<th>社員番号</th>
-			<th th:if="${hasTeamCodeOnly or hasBoth}">社員氏名</th>
-			<th>日付</th>
-			<th>勤怠区分</th>
-			<th>始業時刻</th>
-			<th>終業時刻</th>
-			<th th:if="${hasBoth}">休憩時間</th>
-			<th th:if="${hasTeamCodeOnly or hasBoth}">累積超過時間</th>
-			<th th:if="${hasTeamCodeOnly or hasBoth}">総合時間</th>
+			<th>社員番号</th><th>社員氏名</th><th>日付</th><th>勤怠区分</th><th>始業時刻</th><th>終業時刻</th><th>休憩時間</th><th>累積超過時間</th><th>総合時間</th>
 		</tr>
 
 		<tr th:each="ead : ${EmpAtDataSoumuList}">
+			</td>
 			<td th:text="${ead.emp_num}"></td>
-			<td th:if="${hasTeamCodeOnly or hasBoth}" th:text="${ead.emp_name}"></td>
+			<td th:text="${ead.emp_name}"></td>
 			<td th:text="${ead.date}"></td>
 			<td th:text="${ead.at_type_code}"></td>
 			<td th:text="${ead.st_time}"></td>
 			<td th:text="${ead.fn_time}"></td>
-			<td th:if="${hasBoth}" th:text="${ead.rest_time}"></td>
-			<td th:if="${hasTeamCodeOnly or hasBoth}" th:text="${ead.over_time}"></td>
-			<td th:if="${hasTeamCodeOnly or hasBoth}" th:text="${ead.total_time}"></td>
+			<td th:text="${ead.rest_time}"></td>
+			<td th:text="${ead.over_time}"></td>
+			<td th:text="${ead.total_time}"></td>
 		</tr>
+		
+		<br>
+
 	</table>
 
-	
-	<form th:if="${showOutputButton}" th:action="@{/output_conf}" method="POST" th:object="${OutPutForm}" class="output-form">
-	    <input type="hidden" name="emp_num" th:value="${EmpAtDataSoumuList[0].emp_num}">	
-	    <input type="hidden" name="emp_name" th:value="${EmpAtDataSoumuList[0].emp_name}">
-	    <input type="hidden" name="over_time" th:value="${EmpAtDataSoumuList[0].over_time}">
-	    <input type="hidden" name="total_time" th:value="${EmpAtDataSoumuList[0].total_time}">
-	    <input type="submit" value="出力" class="btn"/>
+	<form th:action="@{/output_conf}" method="POST" th:object="${OutPutForm}">
+		<input type="hidden" name="emp_num" th:value="${EmpAtDataSoumuList[0].emp_num}">	
+		<input type="hidden" name="emp_name" th:value="${EmpAtDataSoumuList[0].emp_name}">
+		<input type="hidden" name="over_time" th:value="${EmpAtDataSoumuList[0].over_time}">
+		<input type="hidden" name="total_time" th:value="${EmpAtDataSoumuList[0].total_time}">
+		<input type="submit" value="出力" class="login-button"/>
 	</form>
-
-
 </div>
 
 <br>
@@ -70,42 +81,11 @@
 <br>
 <a th:href="@{/home}">管理メニューに戻る</a>
 
-<!--<script>
-  function updateVisibility() {
-    const teamCode = document.querySelector('[name="team_code"]').value.trim();
-    const empNum = document.querySelector('[name="emp_num"]').value.trim();
+<!--footer定期-->
+<footer class="footer">
+  © 2025 M COMPANY All rights reserved.
+</footer>
 
-    const empNames = document.querySelectorAll('.emp-name');
-    const overTimes = document.querySelectorAll('.over-time');
-    const totalTimes = document.querySelectorAll('.total-time');
-    const outputForm = document.querySelector('.output-form');
-
-    // 初期状態：全部表示
-    empNames.forEach(el => el.style.display = '');
-    overTimes.forEach(el => el.style.display = '');
-    totalTimes.forEach(el => el.style.display = '');
-    if (outputForm) outputForm.style.display = '';
-
-    if (teamCode && !empNum) {
-      // 部署IDのみ入力：個人情報非表示
-      empNames.forEach(el => el.style.display = 'none');
-      overTimes.forEach(el => el.style.display = 'none');
-      totalTimes.forEach(el => el.style.display = 'none');
-      if (outputForm) outputForm.style.display = 'none';
-    } else if (empNum && !teamCode) {
-      // 社員番号のみ入力：名前や出力系非表示
-      empNames.forEach(el => el.style.display = 'none');
-      overTimes.forEach(el => el.style.display = 'none');
-      totalTimes.forEach(el => el.style.display = 'none');
-      if (outputForm) outputForm.style.display = 'none';
-    }
-  }
-
-  window.addEventListener('DOMContentLoaded', updateVisibility);
-  document.querySelector('[name="team_code"]').addEventListener('input', updateVisibility);
-  document.querySelector('[name="emp_num"]').addEventListener('input', updateVisibility);
-</script>
--->
 
 </body>
 </html>
