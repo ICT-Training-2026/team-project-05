@@ -29,33 +29,39 @@
 
 	<table class="at_list">
 		<tr>
-			<th>社員番号</th><th>社員氏名</th><th>日付</th><th>勤怠区分</th><th>始業時刻</th><th>終業時刻</th><th>休憩時間</th><th>累積超過時間</th><th>総合時間</th>
+			<th>社員番号</th>
+			<th th:if="${hasTeamCodeOnly or hasBoth}">社員氏名</th>
+			<th>日付</th>
+			<th>勤怠区分</th>
+			<th>始業時刻</th>
+			<th>終業時刻</th>
+			<th th:if="${hasBoth}">休憩時間</th>
+			<th th:if="${hasTeamCodeOnly or hasBoth}">累積超過時間</th>
+			<th th:if="${hasTeamCodeOnly or hasBoth}">総合時間</th>
 		</tr>
 
 		<tr th:each="ead : ${EmpAtDataSoumuList}">
-			</td>
 			<td th:text="${ead.emp_num}"></td>
-			<td th:text="${ead.emp_name}" class="emp-name"></td>
+			<td th:if="${hasTeamCodeOnly or hasBoth}" th:text="${ead.emp_name}"></td>
 			<td th:text="${ead.date}"></td>
 			<td th:text="${ead.at_type_code}"></td>
 			<td th:text="${ead.st_time}"></td>
 			<td th:text="${ead.fn_time}"></td>
-			<td th:text="${ead.rest_time}"></td>
-			<td th:text="${ead.over_time}" class="over-time"></td>
-			<td th:text="${ead.total_time}" class="total-time"></td>
+			<td th:if="${hasBoth}" th:text="${ead.rest_time}"></td>
+			<td th:if="${hasTeamCodeOnly or hasBoth}" th:text="${ead.over_time}"></td>
+			<td th:if="${hasTeamCodeOnly or hasBoth}" th:text="${ead.total_time}"></td>
 		</tr>
-		
-		<br>
-		
 	</table>
+
 	
-	<form th:action="@{/output_conf}" method="POST" th:object="${OutPutForm}" class="output-form">
-		<input type="hidden" name="emp_num" th:value="${EmpAtDataSoumuList[0].emp_num}">	
-		<input type="hidden" name="emp_name" th:value="${EmpAtDataSoumuList[0].emp_name}">
-		<input type="hidden" name="over_time" th:value="${EmpAtDataSoumuList[0].over_time}">
-		<input type="hidden" name="total_time" th:value="${EmpAtDataSoumuList[0].total_time}">
-		<input type="submit" value="出力" class="btn"/>
+	<form th:if="${showOutputButton}" th:action="@{/output_conf}" method="POST" th:object="${OutPutForm}" class="output-form">
+	    <input type="hidden" name="emp_num" th:value="${EmpAtDataSoumuList[0].emp_num}">	
+	    <input type="hidden" name="emp_name" th:value="${EmpAtDataSoumuList[0].emp_name}">
+	    <input type="hidden" name="over_time" th:value="${EmpAtDataSoumuList[0].over_time}">
+	    <input type="hidden" name="total_time" th:value="${EmpAtDataSoumuList[0].total_time}">
+	    <input type="submit" value="出力" class="btn"/>
 	</form>
+
 
 </div>
 
@@ -64,7 +70,7 @@
 <br>
 <a th:href="@{/home}">管理メニューに戻る</a>
 
-<script>
+<!--<script>
   function updateVisibility() {
     const teamCode = document.querySelector('[name="team_code"]').value.trim();
     const empNum = document.querySelector('[name="emp_num"]').value.trim();
@@ -99,7 +105,7 @@
   document.querySelector('[name="team_code"]').addEventListener('input', updateVisibility);
   document.querySelector('[name="emp_num"]').addEventListener('input', updateVisibility);
 </script>
-
+-->
 
 </body>
 </html>
