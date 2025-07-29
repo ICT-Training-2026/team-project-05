@@ -59,7 +59,7 @@ public class AtRegistController {
 
 		service.regist(ead);
 			
-		redirectAttributes.addFlashAttribute("msg", "(勤怠登録)");
+		redirectAttributes.addFlashAttribute("msg", "登録");
 			
 		return "redirect:/complete";
 	}
