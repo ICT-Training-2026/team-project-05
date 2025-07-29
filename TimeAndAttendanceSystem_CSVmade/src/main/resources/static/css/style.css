@@ -555,15 +555,8 @@ body {
 }
 
 /*確認画面*/
-.time {
-  font-size: 17px;
-  text-align: center;
-  column-count: 2;
-  width: fit-content;
-}
-
 .check-message{
-  text-align: center;
+  font-size: 18px;
 }
 .regist-check{
   color:blue;
@@ -573,19 +566,6 @@ body {
 }
 .delete-check{
   color:red;
-}
-/*出力内容中央左寄せ*/
-.user-date {
-  font-size: 18px;
-  text-align: center;
-}
-.user-date ul {
-	padding-left: 0;
-	list-style: none;
-	display: inline-block;
-}
-.user-date ul li {
-	text-align: left;
 }
 
 
