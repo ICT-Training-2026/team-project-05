@@ -43,6 +43,7 @@
 			  <label>休憩時間</label>
 			  <span class="at-time"><div th:text="*{rest_time}"></div></span>
 			</div><br>
+			<div class="check-message"><h3>この内容で<span class="regist-check">登録</span>してよろしいですか。</h3></div>
 	  </form>
     <form th:action="@{/regist_conf}" method="POST" th:object="${atRegistForm}">
 		<input type="hidden" th:field="*{emp_num}">
@@ -65,6 +66,11 @@
    	</form>
 	<br>
 	<a th:href="@{/home}">管理メニューに戻る</a>
-
+	
+     <!--footer定期-->
+     <footer class="footer">
+	  © 2025 M COMPANY All rights reserved.
+	 </footer>
+	
 </body>
 </html>
