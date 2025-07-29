@@ -61,7 +61,7 @@ public class AtEditController {
 
 		service.edit(ead);
 			
-		redirectAttributes.addFlashAttribute("msg", "(勤怠更新)");
+		redirectAttributes.addFlashAttribute("msg", "更新");
 			
 		return "redirect:/complete";
 	}
