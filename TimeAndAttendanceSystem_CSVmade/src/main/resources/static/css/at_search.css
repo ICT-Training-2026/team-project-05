@@ -1,6 +1,6 @@
 .attendance-search {
   border: 4px solid #267EC5;
-  width: 460px;
+  width: 440px;
   margin: 30px auto;
   padding: 20px;
   box-sizing: border-box;
@@ -17,10 +17,11 @@
 .row {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 16px;
+  gap: 15px;
+  font-size: 18px;
   color: #2069A5;
   font-weight: bold;
+  padding-left: 120px;
 }
 
 .emp-row {

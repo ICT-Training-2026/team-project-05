@@ -2,45 +2,70 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>勤怠編集</title>
+<title>編集画面</title>
 <link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet" th:href="@{/css/edit.css}">
 </head>
 <body>
+<!--	header定期-->
 
-	<h2>店舗編集</h2>
-
+<div class="top-bar">
+	<a href="/home" class="logo-box">
+	<div class="logo">
+	<span class="logo-m">M</span> <span class="logo-company">COMPANY</span>
+	</div>
+    </a>
+	  <div class="title">Prokaryotes</div>
+	  <div class="user-info">社員ID XXXXX　宮崎 詩織</div>
+	</div>
+	<div class="top-title">編集画面</div><br>
+	
+	<div class="edit-form">
     <form th:action="@{/edit}" method="POST" th:object="${atEditForm}">
-		【社員番号】<br>
-		<p th:text="*{emp_num}"></p>
+		<br>
+		<div class="row">
+		社員ID
+		<span class="emp-id"><a th:text="*{emp_num}"></a></span>
     	<input type="hidden" th:field="*{emp_num}">
-    	<div th:if="${#fields.hasErrors('emp_num')}" th:errors="*{emp_num}" class="error-msg"></div>
-		<br>
-    	【日付】 YYYY-MM-DD<br>
-		<p th:text="*{date}"></p>
-    	<input type="hidden" th:field="*{date}"><br>
+		</div>
+		<div th:if="${#fields.hasErrors('emp_num')}" th:errors="*{emp_num}" class="error-msg"></div><br>
+    	<div class="row">
+    	日付　
+    	<span class="at-date"><a th:text="*{date}"></a>
+    	<input type="hidden" th:field="*{date}">
+    	</div><br>
     	<div th:if="${#fields.hasErrors('date')}" th:errors="*{date}" class="error-msg"></div>
-		<br>
-		【勤怠区分】<br>
-		<input type="text" th:field="*{at_type_code}"><br>
-		<div th:if="${#fields.hasErrors('at_type_code')}" th:errors="*{at_type_code}" class="error-msg"></div>
-		<br>
-    	【始業時刻】 HH:MM:SS<br>
-    	<input type="time" step="1" th:field="*{st_time}"><br>
+    	<div class="row">
+		勤怠区分
+		<input type="text" th:field="*{at_type_code}">
+		</div>
+		<div th:if="${#fields.hasErrors('at_type_code')}" th:errors="*{at_type_code}" class="error-msg"></div><br>
+    	<div class="row">
+    	始業時刻
+    	<input type="time" step="1" th:field="*{st_time}">
+    	</div>
     	<div th:if="${#fields.hasErrors('st_time')}" th:errors="*{st_time}" class="error-msg"></div>
 		<br>
-		【終業時刻】 HH:MM:SS<br>
-		<input type="time" step="1" th:field="*{fn_time}"><br>
+		<div class="row">
+		終業時刻
+		<input type="time" step="1" th:field="*{fn_time}">
+		</div>
 		<div th:if="${#fields.hasErrors('fn_time')}" th:errors="*{fn_time}" class="error-msg"></div>
 		<br>
-		【休憩時間】 HH:MM:SS<br>
-		<input type="time" step="1" th:field="*{rest_time}"><br>
+		<div class="row">
+		休憩時間
+		<input type="time" step="1" th:field="*{rest_time}">
+		</div>
 		<div th:if="${#fields.hasErrors('rest_time')}" th:errors="*{rest_time}" class="error-msg"></div>
 		<br>
-    	<input type="submit" value="更新" class="btn">
+    	<input type="submit" value="更新" class="edit-button">
     </form>
+    </div>
 
 	<br>
-	<a th:href="@{/at_show_search}">戻る</a>
+	<form th:action="@{/at_show_search}" method="GET">
+      <input type="submit" value="戻る"class="return-button" >
+    </form>
 
 </body>
 </html>

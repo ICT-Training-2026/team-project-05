@@ -2,15 +2,25 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>完了</title>
+<title>完了画面</title>
 <link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet" th:href="@{/css/at_search.css}">
 </head>
 <body>
-		
-	<h2>完了</h2>
+	<!--	header定期-->
+		<div class="top-bar">
+			<a href="/home" class="logo-box">
+			<div class="logo">
+			<span class="logo-m">M</span> <span class="logo-company">COMPANY</span>
+		    </div>
+		</a>
+		  <div class="title">Prokaryotes</div>
+		  <div class="user-info">社員ID XXXXX　宮崎 詩織</div>
+		</div>
+		<div class="top-title">完了画面</div>
 
 	<br>
-	<p>処理が完了しました。</p>
+	<h2>処理が完了しました。</h2>
 	<p th:text="${msg}"></p>
 	<br>
 	<br>
