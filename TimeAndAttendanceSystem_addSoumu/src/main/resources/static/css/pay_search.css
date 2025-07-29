@@ -1,0 +1,21 @@
+.pay_search_btn {
+  text-align: center;
+  padding: 7px 30px;
+  margin: 0 70px;
+  font-size: 16px;
+  font-weight: bold; /*　ボタン＿全共通 */
+  color: white; /*　ボタン＿全共通 */
+  border: 2px solid ; /*ボタン＿全共通 */
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* 勤怠関連の色 */
+.pay_search_btn {
+  background-color: #F7941D;
+  border: 2px solid rgb(149, 89, 17);
+}
+.pay_search_btn:hover {
+  background-color: #ca7917;
+}

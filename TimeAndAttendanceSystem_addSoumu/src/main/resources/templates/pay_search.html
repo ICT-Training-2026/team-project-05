@@ -4,25 +4,43 @@
 <meta charset="UTF-8">
 <title>勤怠情報・一覧</title>
 <link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet" th:href="@{/css/pay_search.css}">
 </head>
 <body>
+	<!--	header定期-->
+			
+			<div class="top-bar">
+				<a href="/home" class="logo-box">
+				  <div class="logo">
+				    <span class="logo-m">M</span> <span class="logo-company">COMPANY</span>
+				  </div>
+				</a>
+			  <div class="title">Prokaryotes</div>
+			  <div class="user-info">社員ID XXXXX　宮崎 詩織</div>
+			</div>
+			<div class="top-title">勤怠検索(総務用)画面</div>
 
-<h2>勤怠検索(総務用)</h2>
-
+			
+<br>
+			
+<div class="form-row">		
+			
 <form th:action="@{/pay_search}" method="POST" th:object="${PaySearchForm}">
-  部署ID<input type="text" th:field="*{team_code}"/><br>
-  社員番号<input type="text" th:field="*{emp_num}"/><br>
-  日付:<input type="date" th:field="*{date}"/><br>
+  部署ID<input type="text" th:field="*{team_code}" class="text-input"/><br>
+  社員番号<input type="text" th:field="*{emp_num}" class="text-input"/><br>
+  日付:<input type="date" th:field="*{date}" class="text-input"/><br>
   勤怠区分:
-  <select th:field="*{at_type_code}">
+  <select th:field="*{at_type_code}" class="text-input">
     <option value="">全て</option>
     <option value="01">出勤</option>
     <option value="02">遅刻</option>
     <option value="03">休暇</option>
   </select>
   <br><br>
-  <input type="submit" value="検索" class="btn"/>
+  <input type="submit" value="検索" class="login-button"/>
 </form>
+
+</div>
 
 <div th:if="${EmpAtDataList} != null">
 	<h2>勤怠一覧</h2>
@@ -47,14 +65,18 @@
 
 </div>
 
-<br>
+
 
 <form th:action="@{/out_put}" method="POST" th:object="${PaySearchForm}">
-  <input type="submit" value="出力" class="btn"/>
+  <input type="submit" value="出力" class="pay_search_btn"/>
 </form>
 
 <br>
 <a th:href="@{/home}">管理メニューに戻る</a>
 
+<!--footer定期-->
+<footer class="footer">
+  © 2025 M COMPANY All rights reserved.
+</footer>
 </body>
 </html>
