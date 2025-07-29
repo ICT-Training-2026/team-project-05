@@ -55,8 +55,7 @@ public class AtDeleteController {
 
 		service.remove(ead);
 
-		redirectAttributes.addFlashAttribute("msg", "(勤怠削除)");
-
+		redirectAttributes.addFlashAttribute("msg", "削除");
 		return "redirect:/complete";
 	}
 }
