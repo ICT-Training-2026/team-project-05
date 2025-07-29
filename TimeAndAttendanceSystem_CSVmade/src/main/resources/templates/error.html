@@ -1,13 +1,23 @@
-<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>エラー</title>
+<title>エラー画面</title>
 <link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet" th:href="@{/css/edit.css}">
 </head>
 <body>
+<!--	header定期-->
 
-<h2>エラー</h2>
+<div class="top-bar">
+	<a href="/home" class="logo-box">
+	<div class="logo">
+	<span class="logo-m">M</span> <span class="logo-company">COMPANY</span>
+	</div>
+    </a>
+	  <div class="title">Prokaryotes</div>
+	</div>
+	<div class="error">エラー</div><br>
+
 <br>
 <p class="error-msg">エラーが発生しました。</p>
 <p class="error-msg" th:text= "${status} + '　' + ${error}"></p>
