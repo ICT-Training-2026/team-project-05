@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>完了画面</title>
 <link rel="stylesheet" th:href="@{/css/style.css}">
-<link rel="stylesheet" th:href="@{/css/at_search.css}">
+<link rel="stylesheet" th:href="@{/css/edit.css}">
 </head>
 <body>
 	<!--	header定期-->
@@ -18,14 +18,15 @@
 		  <div class="user-info">社員ID XXXXX　宮崎 詩織</div>
 		</div>
 		<div class="top-title">完了画面</div>
-
-	<br>
-	<h2>処理が完了しました。</h2>
-	<p th:text="${msg}"></p>
-	<br>
+		<br>
+	<div class="check-message"><h3><a th:text="${msg}"></a>が完了しました。</h3></div>
 	<br>
 
 	<a th:href="@{/home}">管理メニューに戻る</a>
-
+	
+	 <!--footer定期-->
+     <footer class="footer">
+	  © 2025 M COMPANY All rights reserved.
+	 </footer>
 </body>
 </html>
