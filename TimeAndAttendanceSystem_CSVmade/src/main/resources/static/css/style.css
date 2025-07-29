@@ -103,6 +103,13 @@ td {
 /*Chie'sGodFieldEnd↑*/
 /*MiyazakiPrifecture↓*/
 
+.display-none {
+  display: none !important;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+
 body {
   margin: 0;
   font-family: 'Meiryo', sans-serif;
