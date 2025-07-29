@@ -443,7 +443,7 @@ label {
 }
 
 
-.return-button, .login-button, .home-button, .search-button, .regist-button, .edit-button, .output-button{
+.return-button, .login-button, .home-button, .search-button, .regist-button, .edit-button, .output-button, .delete-button{
   padding: 7px 30px;
   margin: 0 70px;
   font-size: 16px;
