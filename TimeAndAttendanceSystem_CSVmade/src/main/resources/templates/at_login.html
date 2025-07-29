@@ -5,18 +5,39 @@
 <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-	
-  <h1>ログイン</h1>
-  
+	<!--	header定期-->
+			
+			<div class="top-bar">
+				<a href="/home" class="logo-box">
+				  <div class="logo">
+				    <span class="logo-m">M</span> <span class="logo-company">COMPANY</span>
+				  </div>
+				</a>
+			  <div class="title">Prokaryotes</div>
+
+			</div>
+			<div class="top-title">ログイン画面</div>
+ 
+			
+
+			<br>
+<div class="form-row">			
   <form th:action="@{/at_login}" method="POST" th:object="${AtLoginForm}">
     社員番号<br>
-	<input type="text" th:field="*{emp_num}"></label>
+	<input type="text" th:field="*{emp_num}"　class="text-input"></label>
 	<br>
     パスワード<br>
-	<input type="password" th:field="*{emp_pass}"></label>
+	<input type="password" th:field="*{emp_pass}"　class="text-input"></label>
 	<br>
-	<input type="submit" value="ログイン" class="btn">
+	<br>
+	<input type="submit" value="ログイン" class="login-button">
   </form>
+ </div>
+ <!--footer定期-->
+ <footer class="footer">
+   © 2025 M COMPANY All rights reserved.
+ </footer>
+
 </body>
 </html>
 
