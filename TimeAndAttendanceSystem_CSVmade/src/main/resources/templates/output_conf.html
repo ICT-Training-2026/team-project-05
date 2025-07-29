@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>勤怠出力確認</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+	<h2>勤怠出力確認</h2>
+
+	<table class="confirm-table" th:object="${OutPutForm}">
+		<tr>
+			<td class="guide">【社員番号】</td>
+			<td th:text="*{emp_num}"></td>
+		</tr>
+		<tr>
+			<td class="guide">【社員名】</td>
+			<td th:text="*{emp_name}"></td>
+		</tr>
+		<tr>
+			<td class="guide">【超過時間】</td>
+			<td th:text="*{over_time}"></td>
+		</tr>
+		<tr>
+			<td class="guide">【合計時間】</td>
+			<td th:text="*{total_time}"></td>
+		</tr>
+	</table>
+	<br>
+
+    <form th:action="@{/output_csv}" method="POST" th:object="${OutPutForm}">
+		<input type="hidden" th:field="*{emp_num}">
+		<input type="hidden" th:field="*{emp_name}">
+		<input type="hidden" th:field="*{total_time}">
+		<input type="hidden" th:field="*{over_time}">
+    	<input type="submit" value="出力実行" class="btn">
+   	</form>
+	
+	<br>
+    <a th:href="@{/pay_show_search}">戻る</a>
+	
+	<br>
+	<a th:href="@{/home}">管理メニューに戻る</a>
+
+</body>
+</html>

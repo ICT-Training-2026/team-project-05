@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="UTF-8">
+<title>ログイン(勤怠用)</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+	
+  <h1>ログイン</h1>
+  
+  <form th:action="@{/pay_login}" method="POST" th:object="${PayLoginForm}">
+    社員番号<br>
+	<input type="text" th:field="*{emp_num}"></label>
+	<br>
+    パスワード<br>
+	<input type="password" th:field="*{emp_pass}"></label>
+	<br>
+	<input type="submit" value="ログイン" class="btn">
+  </form>
+</body>
+</html>
