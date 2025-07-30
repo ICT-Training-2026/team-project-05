@@ -1,8 +1,14 @@
 package com.example.demo.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -18,6 +24,47 @@ import lombok.RequiredArgsConstructor;
 public class AtEditController {
 
 	private final AtEditService service;
+	@InitBinder
+    public void initBinder(WebDataBinder binder) {
+        SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
+        fmt.setLenient(false);
+        binder.registerCustomEditor(java.sql.Date.class,
+            new CustomDateEditor(fmt, true) {
+                @Override
+                public void setAsText(String text) {
+                    if (text == null || text.trim().isEmpty()) {
+                        setValue(null);
+                    } else {
+                        try {
+                            java.util.Date parsed = fmt.parse(text);
+                            setValue(new java.sql.Date(parsed.getTime()));
+                        } catch (ParseException e) {
+                            setValue(null);
+                        }
+                    }
+                }
+            }
+        );
+     // 時刻 (java.sql.Time) 用の変換
+        SimpleDateFormat timeFmt = new SimpleDateFormat("HH:mm:ss");
+        timeFmt.setLenient(false);
+        binder.registerCustomEditor(java.sql.Time.class,
+            new CustomDateEditor(timeFmt, true) {
+                @Override
+                public void setAsText(String text) {
+                    if (text == null || text.trim().isEmpty()) {
+                        setValue(null);
+                    } else {
+                        try {
+                            java.util.Date parsed = timeFmt.parse(text);
+                            setValue(new java.sql.Time(parsed.getTime()));
+                        } catch (ParseException e) {
+                            setValue(null);
+                        }
+                    }
+                }
+            });
+    }
 	
 	/*--- 編集画面表示リクエスト ---*/
 	@PostMapping("/at_show_edit")
