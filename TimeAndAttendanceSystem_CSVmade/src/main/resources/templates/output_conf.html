@@ -1,14 +1,23 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-<title>勤怠出力確認</title>
+<html lang="ja">
+<head><meta charset="UTF-8">
+<title>出力確認画面</title>
 <link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet" th:href="@{/css/pay_search.css}">
 </head>
 <body>
-
-	<h2>勤怠出力確認</h2>
-
+	<!--	header定期-->
+			
+			<div class="top-bar">
+				<a href="/home" class="logo-box">
+				  <div class="logo">
+				    <span class="logo-m">M</span> <span class="logo-company">COMPANY</span>
+				  </div>
+				</a>
+			  <div class="title">Prokaryotes</div>
+			</div>
+			<div class="top-title">出力確認画面</div>
+	<br><br>		
 	<table class="confirm-table" th:object="${OutPutForm}">
 		<tr>
 			<td class="guide">【社員番号】</td>
@@ -28,18 +37,19 @@
 		</tr>
 	</table>
 	<br>
-
+	
     <form th:action="@{/output_csv}" method="POST" th:object="${OutPutForm}">
 		<input type="hidden" th:field="*{emp_num}">
 		<input type="hidden" th:field="*{emp_name}">
 		<input type="hidden" th:field="*{total_time}">
 		<input type="hidden" th:field="*{over_time}">
-    	<input type="submit" value="出力実行" class="btn">
+    	<input type="submit" value="出力実行" class="output-button">
    	</form>
 	
 	<br>
-    <a th:href="@{/pay_show_search}">戻る</a>
-	
+	<form th:action="@{/pay_search}" method="POST">
+      <input type="submit" value="戻る"class="return-button" >
+    </form>
 	<br>
 	<a th:href="@{/home}">管理メニューに戻る</a>
 
