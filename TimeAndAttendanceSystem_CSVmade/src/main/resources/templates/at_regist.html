@@ -39,7 +39,7 @@
 		<div class="row">
 		始業時刻
 		<input type="time" step="1" th:field="*{st_time}">
-		</div>
+		</div><br>
 		<div th:if="${#fields.hasErrors('st_time')}" th:errors="*{st_time}" class="error-msg"></div><br>
 		<div class="row">
 		終業時刻
@@ -50,7 +50,7 @@
 		休憩時間
 		<input type="time" step="1" th:field="*{rest_time}">
 		</div><br>
-		<div th:if="${#fields.hasErrors('rest_time')}" th:errors="*{rest_time}" class="error-msg"></div>
+		<div th:if="${#fields.hasErrors('rest_time')}" th:errors="*{rest_time}" class="error-msg"></div><br>
     	<input type="submit" value="登録" class="regist-button">
     </div>
     </form>
