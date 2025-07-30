@@ -8,14 +8,14 @@
 </head>
 <body>
 <!--	header定期-->
-<form th:object="${atRegistForm}">
+
 	<div class="top-bar">
 	  <div class="logo-box">
 	    <span class="logo-m">M</span> COMPANY</div>
 	  <div class="title">Prokaryotes</div>
-	  <div class="user-info">社員ID <a th:text="*{emp_num}"></a>　宮崎 詩織</div>
 	</div>
 	<div class="top-title">登録確認画面</div><br>
+  <form th:object="${atRegistForm}">
 	<div class="confirm">
 			<div class="row">
 			  <label>社員番号</label>
