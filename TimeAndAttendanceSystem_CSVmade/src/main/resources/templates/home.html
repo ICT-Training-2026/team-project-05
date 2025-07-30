@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>ホーム画面</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+	<!--header定期-->
+	<div class="home-header">
+	  <div class="top-bar">
+		<a href="/home" class="logo-box">
+		  <div class="logo">
+		  <span class="logo-m">M</span> <span class="logo-company">COMPANY</span>
+		  </div>
+		</a>
+		
+		
+<!--	    <div class="logo-box">-->
+<!--	      <span class="logo-m">M</span> COMPANY</div>-->
+		  
+		  
+	    <div class="title">Prokaryotes</div>
+	  </div>
+	  <div class="top-title">ホーム画面</div>
+
+	<div class="purpose">
+		<br>
+		<div>
+		    <form th:action="@{/login}" method="POST">
+	<!--			<label for="emp_num">社員ID：</label>-->
+	<!--			<input type="text" id="emp_num" name="emp_num" required>-->
+	    		<input type="submit" value="勤怠関連" class="purpose-emp-button">
+	 	  	</form>
+		</div>
+		<br>
+		<div>
+		    <form th:action="@{/login2}" method="POST">
+	    		<input type="submit" value="給与出力" class="purpose-admin-button">
+	 	  	</form>
+		</div>
+	</div>
+	<!--footer定期-->
+	<footer class="footer">
+	  © 2025 M COMPANY All rights reserved.
+	</footer>
+	
+</body>
+</html>

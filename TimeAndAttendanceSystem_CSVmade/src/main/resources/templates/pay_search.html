@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>勤怠情報・一覧</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<h2>勤怠検索(総務用)</h2>
+
+<form th:action="@{/pay_search}" method="POST" th:object="${PaySearchForm}">
+  部署ID<input type="text" th:field="*{team_code}"/><br>
+  社員番号<input type="text" th:field="*{emp_num}"/><br>
+  日付:<input type="date" th:field="*{date}"/><br>
+  勤怠区分:
+  <select th:field="*{at_type_code}">
+    <option value="">全て</option>
+    <option value="01">出勤</option>
+    <option value="02">遅刻</option>
+    <option value="03">休暇</option>
+  </select>
+  <br><br>
+  <input type="submit" value="検索" class="btn"/>
+</form>
+
+<div th:if="${EmpAtDataSoumuList} != null">
+	<h2>勤怠一覧</h2>
+
+	<table class="at_list">
+		<tr>
+			<th>社員番号</th><th>社員氏名</th><th>日付</th><th>勤怠区分</th><th>始業時刻</th><th>終業時刻</th><th>休憩時間</th><th>累積超過時間</th><th>総合時間</th>
+		</tr>
+
+		<tr th:each="ead : ${EmpAtDataSoumuList}">
+			</td>
+			<td th:text="${ead.emp_num}"></td>
+			<td th:text="${ead.emp_name}"></td>
+			<td th:text="${ead.date}"></td>
+			<td th:text="${ead.at_type_code}"></td>
+			<td th:text="${ead.st_time}"></td>
+			<td th:text="${ead.fn_time}"></td>
+			<td th:text="${ead.rest_time}"></td>
+			<td th:text="${ead.over_time}"></td>
+			<td th:text="${ead.total_time}"></td>
+		</tr>
+		
+		<br>
+		
+		<tr th:each="ead : ${EmpAtDataSoumuList}">
+			<form th:action="@{/output_conf}" method="POST" th:object="${OutPutForm}">
+				<input type="hidden" name="emp_num" th:value="${ead.emp_num}">	
+				<input type="hidden" name="emp_name" th:value="${ead.emp_name}">
+				<input type="hidden" name="over_time" th:value="${ead.over_time}">
+				<input type="hidden" name="total_time" th:value="${ead.total_time}">
+				<input type="submit" value="出力" class="btn"/>
+			</form>
+		</tr>
+
+	</table>
+
+
+</div>
+
+<br>
+
+<br>
+<a th:href="@{/home}">管理メニューに戻る</a>
+
+</body>
+</html>

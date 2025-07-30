@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>完了画面</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet" th:href="@{/css/edit.css}">
+</head>
+<body>
+	<!--	header定期-->
+		<div class="top-bar">
+			<a href="/home" class="logo-box">
+			<div class="logo">
+			<span class="logo-m">M</span> <span class="logo-company">COMPANY</span>
+		    </div>
+		</a>
+		  <div class="title">Prokaryotes</div>
+		</div>
+		<div class="top-title">完了画面</div>
+		<br>
+	<div class="check-message"><h3><a th:text="${msg}"></a>が完了しました。</h3></div>
+	<br>
+
+	<a th:href="@{/home}">管理メニューに戻る</a>
+	
+	 <!--footer定期-->
+     <footer class="footer">
+	  © 2025 M COMPANY All rights reserved.
+	 </footer>
+</body>
+</html>

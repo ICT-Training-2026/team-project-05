@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="UTF-8">
+<title>ログイン(勤怠用)</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+	<!--	header定期-->
+			
+			<div class="top-bar">
+				<a href="/home" class="logo-box">
+				  <div class="logo">
+				    <span class="logo-m">M</span> <span class="logo-company">COMPANY</span>
+				  </div>
+				</a>
+			  <div class="title">Prokaryotes</div>
+			  <div class="user-info">社員ID XXXXX　宮崎 詩織</div>
+			</div>
+			<div class="top-title">ログイン画面</div>
+			
+			<br>
+<div class="form-row">		
+  <form th:action="@{/pay_login}" method="POST" th:object="${PayLoginForm}">
+    社員番号<br>
+	<input type="text" th:field="*{emp_num}"class="text-input"></label>
+	<br>
+    パスワード<br>
+	<input type="password" th:field="*{emp_pass}"class="text-input"></label>
+	<br>
+	<br>
+	<input type="submit" value="ログイン" class="login-button">
+  </form>
+</div>
+  <!--footer定期-->
+   <footer class="footer">
+     © 2025 M COMPANY All rights reserved.
+   </footer>
+
+</body>
+</html>
