@@ -16,7 +16,6 @@
 	  <div class="user-info">社員ID <a th:text="*{emp_num}"></a>　宮崎 詩織</div>
 	</div>
 	<div class="top-title">登録確認画面</div><br>
-	
 	<div class="confirm">
 			<div class="row">
 			  <label>社員番号</label>
@@ -43,7 +42,7 @@
 			  <span class="at-time"><div th:text="*{rest_time}"></div></span>
 			</div><br>
 			<div class="check-message"><h3>この内容で<span class="regist-check">登録</span>してよろしいですか。</h3></div>
-	  </form>
+
     <form th:action="@{/regist_conf}" method="POST" th:object="${atRegistForm}">
 		<input type="hidden" th:field="*{emp_num}">
     	<input type="hidden" th:field="*{date}">
@@ -53,14 +52,9 @@
 		<input type="hidden" th:field="*{rest_time}">
     	<input type="submit" value="登録実行" class="regist-button">
    	</form>
+	</form>
    	</div>
-    <form th:action="@{/at_show_regist}" method="GET" th:object="${atRegistForm}">
-		<input type="hidden" th:field="*{emp_num}">
-		<input type="hidden" th:field="*{date}">
-		<input type="hidden" th:field="*{at_type_code}">
-		<input type="hidden" th:field="*{st_time}">
-		<input type="hidden" th:field="*{fn_time}">
-		<input type="hidden" th:field="*{rest_time}">
+    <form th:action="@{/at_show_regist}" method="POST" th:object="${atRegistForm}">
     	<input type="submit" value="戻る" class="return-button">
    	</form>
 	<br>
