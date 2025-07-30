@@ -57,7 +57,7 @@
     	<input type="submit" value="更新実行" class="edit-button">
    	</form>
    	</div>
-    <form th:action="@{/at_show_edit}" method="GET" th:object="${atEditForm}">
+    <form th:action="@{/at_show_edit}" method="POST" th:object="${atEditForm}">
 		<input type="hidden" th:field="*{emp_num}">
 		<input type="hidden" th:field="*{date}">
 		<input type="hidden" th:field="*{at_type_code}">
