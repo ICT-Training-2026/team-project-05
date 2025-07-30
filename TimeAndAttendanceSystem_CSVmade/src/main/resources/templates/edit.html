@@ -48,7 +48,6 @@
 		<input type="time" step="1" th:field="*{fn_time}">
 		</div><br>
 		<div th:if="${#fields.hasErrors('fn_time')}" th:errors="*{fn_time}" class="error-msg"></div><br>
-		<br>
 		<div class="row">
 		休憩時間
 		<input type="time" step="1" th:field="*{rest_time}">
