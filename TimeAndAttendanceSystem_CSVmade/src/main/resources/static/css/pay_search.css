@@ -1,21 +1,22 @@
-.pay_search_btn {
-  text-align: center;
-  padding: 7px 30px;
-  margin: 0 70px;
-  font-size: 16px;
-  font-weight: bold; /*　ボタン＿全共通 */
-  color: white; /*　ボタン＿全共通 */
-  border: 2px solid ; /*ボタン＿全共通 */
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.attendance-search {
+  border: 4px solid #267EC5;
+  width: 440px;
+  margin: 30px auto;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #fff;
+  font-family: sans-serif;
 }
-
-/* 勤怠関連の色 */
-.pay_search_btn {
-  background-color: #F7941D;
-  border: 2px solid rgb(149, 89, 17);
+.row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 18px;
+  color: #2069A5;
+  font-weight: bold;
+  padding-left: 80px;
 }
-.pay_search_btn:hover {
-  background-color: #ca7917;
+.confirm-table{
+	width:500px;
+	
 }
