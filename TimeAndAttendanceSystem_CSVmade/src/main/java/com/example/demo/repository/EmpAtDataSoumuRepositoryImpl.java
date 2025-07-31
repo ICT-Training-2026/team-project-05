@@ -31,6 +31,10 @@ public class EmpAtDataSoumuRepositoryImpl implements EmpAtDataSoumuRepository {
 
         // emp_numが空(null or empty)ならteam_codeで集計
         if (!StringUtils.hasText(emp_num)) {
+            if (!StringUtils.hasText(team_code)) {
+                return new ArrayList<>(); // チームコードがnullなら何もしない
+            }
+
             String sql = 
                 "SELECT ead.emp_num, ei.emp_name," +
                 "CAST(SUM(TIME_TO_SEC(TIMEDIFF(ead.fn_time, ead.st_time)) - TIME_TO_SEC(ead.rest_time)) / 3600 AS SIGNED) AS total_time," +
@@ -38,6 +42,7 @@ public class EmpAtDataSoumuRepositoryImpl implements EmpAtDataSoumuRepository {
                 "FROM emp_at_data ead " +
                 "LEFT OUTER JOIN emp_info ei ON ead.emp_num = ei.emp_num " +
                 "WHERE ei.team_code = ? " +
+                "GROUP BY ead.emp_num, ei.emp_name " +   // ←これ追加
                 "ORDER BY ead.emp_num";
 
             List<Map<String, Object>> list = jdbcTemplate.queryForList(sql, team_code);
